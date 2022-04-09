@@ -56,7 +56,15 @@ namespace _2._1WebShop
                             switch(unos.KeyChar)
                             {
                                 case 'a':
-                                    Console.WriteLine("Unos ARTIKLA!");
+                                    UnosArtikla();
+                                    podmeni = true;
+                                    break;
+                                case 'b':
+                                    IzlistajArtikle();
+                                    podmeni = true;
+                                    break;
+                                case 'c':
+                                    PromenaCene();
                                     podmeni = true;
                                     break;
                             }
@@ -88,6 +96,7 @@ namespace _2._1WebShop
                 case Admin:
                     Console.WriteLine("a -- unos artikla");
                     Console.WriteLine("b -- pregled artikala");
+                    Console.WriteLine("c -- izmena artikla");
                     break;
                 case User:
                     Console.WriteLine("a -- vidi \"web\"shop");

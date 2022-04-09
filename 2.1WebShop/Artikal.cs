@@ -8,6 +8,7 @@ namespace _2._1WebShop
 {
     internal class Artikal
     {
+        public int Id { get; set; }
         private string _sifra = string.Empty;
         public string Sifra
         {
@@ -16,21 +17,31 @@ namespace _2._1WebShop
         }
         public string Naziv { get; set; } = string.Empty;
 
-        public decimal _uCena;
+        public decimal UCena { get; set; }
         
         
         private int _marza;
+        public int Marza
+        {
+            get => _marza;
+            set 
+            {
+                _marza = value;
+                _izlaznaCena = UCena * (1 + _marza / 100m);
+            }
+        }
+        /*
         public void PostaviMarzu(int m) //Setter
         {
             _marza = m;
             _izlaznaCena = _uCena * (1 + _marza / 100m);
         }
-        //public decimal DohvatiMarzu()
-        //{
-        //    return _marza;
-        //}
-        public decimal DohvatiMarzu() => _marza; //Getter
-
+        public decimal DohvatiMarzu()
+        {
+            return _marza;
+        }
+        //public decimal DohvatiMarzu() => _marza; //Getter
+        */
        
 
         private decimal _izlaznaCena;
@@ -41,7 +52,7 @@ namespace _2._1WebShop
             set
             {
                 _izlaznaCena = value;
-                _marza = (int)((_izlaznaCena / _uCena - 1) * 100);
+                _marza = (int)((_izlaznaCena / UCena - 1) * 100);
             }
         }
        /* public void PostaviIzlaznuCenu(decimal c)
@@ -55,6 +66,6 @@ namespace _2._1WebShop
         }*/
         
         
-        public int _kolicina;
+        public int Kolicina { get; set; }
     }
 }
