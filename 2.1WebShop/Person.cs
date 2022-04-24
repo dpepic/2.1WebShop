@@ -8,12 +8,13 @@ namespace _2._1WebShop
 {
     internal abstract class Person
     {
-        public string _name = string.Empty;
-        public string _surname = string.Empty;
-        public string _email = string.Empty;
-        public string _username = string.Empty;
-        public string _password = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Surname { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
 
-        public Address _address = new();
+        public Address? Address { get; set; }
     }
 }

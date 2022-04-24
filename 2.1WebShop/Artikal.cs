@@ -9,6 +9,10 @@ namespace _2._1WebShop
     internal class Artikal
     {
         public int Id { get; set; }
+
+        public List<Order> Orders { get; set; } = new();
+
+
         private string _sifra = string.Empty;
         public string Sifra
         {

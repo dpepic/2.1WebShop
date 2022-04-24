@@ -18,7 +18,7 @@ namespace _2._1WebShop
                 Console.WriteLine("\n----------------------------");
                 if (loggedIn is not null)
                 {
-                    Console.WriteLine($"--- Zdravo {loggedIn._name} ! ---");
+                    Console.WriteLine($"--- Zdravo {loggedIn.Name} ! ---");
                 }
                 Console.WriteLine("1.Registruj se !");
                 if (loggedIn is null)

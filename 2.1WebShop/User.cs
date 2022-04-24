@@ -8,5 +8,6 @@ namespace _2._1WebShop
 {
     internal class User:Person
     {
+        public string NestoZaKorisnika { get; set; } = string.Empty;
     }
 }

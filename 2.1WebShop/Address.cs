@@ -8,9 +8,10 @@ namespace _2._1WebShop
 {
     internal class Address
     {
-        public string _city = string.Empty;
-        public string _poBox = string.Empty;
-        public string _address = string.Empty;
-        public string _streetNo = string.Empty;
+        public int Id { get; set; }
+        public string City { get; set; } = string.Empty;
+        public string PoBox { get; set; } = string.Empty;
+        public string StreetName { get; set; } = string.Empty;
+        public string StreetNo { get; set; } = string.Empty;
     }
 }

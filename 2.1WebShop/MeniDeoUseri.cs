@@ -26,27 +26,27 @@ namespace _2._1WebShop
                     break;
             }
             Console.Write("Unesite Ime: ");
-            person._name = Console.ReadLine();
+            person.Name = Console.ReadLine();
             Console.Write("Unesite Prezime: ");
-            person._surname = Console.ReadLine();
+            person.Surname = Console.ReadLine();
             Console.Write("Unesite Email: ");
-            person._email = Console.ReadLine();
+            person.Email = Console.ReadLine();
             Console.Write("Unesite Username: ");
-            person._username = Console.ReadLine();
+            person.Username = Console.ReadLine();
             Console.Write("Unesite Sifru: ");
-            person._password = Console.ReadLine();
+            person.Password = Console.ReadLine();
             Console.Write("Unesite Grad: ");
-            person._address._city = Console.ReadLine();
+            person.Address.City = Console.ReadLine();
             Console.Write("Unesite Postanski kod: ");
-            person._address._poBox = Console.ReadLine();
+            person.Address.PoBox = Console.ReadLine();
             Console.Write("Unesite Adresu: ");
-            person._address._address = Console.ReadLine();
+            person.Address.StreetName = Console.ReadLine();
             Console.Write("Unesite Br adrese: ");
-            person._address._streetNo = Console.ReadLine();
+            person.Address.StreetNo = Console.ReadLine();
             if (person is Admin admin)
             {
                 Console.WriteLine("Unesite tajni broj: ");
-                admin._tajniBroj = int.Parse(Console.ReadLine());
+                admin.TajniBroj = int.Parse(Console.ReadLine());
             }
             Persons.Add(person);
         }
@@ -59,7 +59,7 @@ namespace _2._1WebShop
                 Console.Write("Unesite sifru: ");
                 string pass = Console.ReadLine();
 
-                loggedIn = Persons.Where(p => p._username == username && p._password == pass).FirstOrDefault();
+                loggedIn = Persons.Where(p => p.Username == username && p.Password == pass).FirstOrDefault();
                 if (loggedIn is not null)
                 {
                     Console.WriteLine("Prijavljeni ste!");
@@ -79,10 +79,10 @@ namespace _2._1WebShop
             //}
             Console.WriteLine("Admini:");
             Console.WriteLine("==========");
-            Persons.Where(person => person is Admin).ToList().ForEach(p => Console.WriteLine($"Ime:{p._name} Prezime:{p._surname} Email: {p._username} Username:{p._username}"));
+            Persons.Where(person => person is Admin).ToList().ForEach(p => Console.WriteLine($"Ime:{p.Name} Prezime:{p.Surname} Email: {p.Username} Username:{p.Username}"));
             Console.WriteLine("Users:");
             Console.WriteLine("==========");
-            Persons.Where(person => person is User).ToList().ForEach(p => Console.WriteLine($"Ime:{p._name} Prezime:{p._surname} Email: {p._username} Username:{p._username}"));
+            Persons.Where(person => person is User).ToList().ForEach(p => Console.WriteLine($"Ime:{p.Name} Prezime:{p.Surname} Email: {p.Username} Username:{p.Username}"));
         }
     }
 }
